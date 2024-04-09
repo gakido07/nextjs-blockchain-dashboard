@@ -1,0 +1,11 @@
+.section {
+  max-width: 100%;
+  position: relative;
+  min-height: 100vh;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.section-without-padding {
+  padding: 0;
+}

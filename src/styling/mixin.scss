@@ -1,0 +1,10 @@
+@mixin page-padding {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+
+@mixin dashboard-list {
+  padding: 2% 1% 2% 1%;
+  width: 40%;
+}

@@ -1,0 +1,26 @@
+@import '../../../styling/mixin.scss';
+
+.dashboard-list {
+  width: 48%;
+  min-height: 10vh;
+  height: fit-content;
+  padding: 1% 2% 1% 2%;
+
+  h4 {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-bottom: 1px solid rgba(184, 184, 184, 0.281);
+    font-weight: 400;
+    margin-bottom: 1vh;
+  }
+
+  a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+}

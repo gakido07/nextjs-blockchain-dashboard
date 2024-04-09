@@ -1,0 +1,23 @@
+export type BlockData = {
+  hash: string;
+  parentHash: string;
+  sha3Uncles: string;
+  miner: string;
+  stateRoot: string;
+  transactionsRoot: string;
+  receiptsRoot: string;
+  logsBloom: string;
+  difficulty: number;
+  number: number;
+  gasLimit: number;
+  gasUsed: number;
+  timestamp: number;
+  extraData: string;
+  mixHash: string;
+  nonce: number;
+  totalDifficulty: number;
+  baseFeePerGas: number;
+  size: number;
+  transactions: any[];
+  uncles: any[];
+};

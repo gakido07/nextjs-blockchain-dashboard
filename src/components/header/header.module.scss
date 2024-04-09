@@ -1,0 +1,10 @@
+@import "../../styling/mixin.scss";
+
+.header {
+  @include page-padding;
+  height: 10vh;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
