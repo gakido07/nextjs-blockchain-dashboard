@@ -8,12 +8,21 @@
   margin: auto;
   margin-top: 5vh;
   margin-bottom: 5vh;
+
+  @media only screen and (max-width: 600px) {
+    width: 95%;
+    display: block;
+    height: fit-content;
+    margin-bottom: 3vh;
+  }
 }
 
 .list-row {
   height: fit-content;
   width: 80%;
-  display: flex;
-  justify-content: space-between;
   margin: auto;
+
+  @media only screen and (max-width: 600px) {
+    width: 95%;
+  }
 }

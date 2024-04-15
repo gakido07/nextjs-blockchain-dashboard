@@ -1,6 +1,10 @@
 .list-icon-wrapper {
-  width: 3vh;
+  width: 8vh;
   height: 8vh;
-  background-color: red;
+  background-color: rgba(228, 228, 228, 0.493);
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4%;
 }

@@ -1,27 +1,30 @@
 import { Paper, Skeleton } from "@mantine/core";
 import styles from "./dashboard-list.module.scss";
 import { ReactNode } from "react";
-import Link from "next/link";
 import ArrowRight from "@/assets/arrow-sm-right-svgrepo-com.svg";
 
 interface DashboardListProps {
   title: string;
   children?: ReactNode;
-  viewAllLink?: string;
+  onViewAll?: () => void;
+  isViewingAll?: boolean;
 }
 
 export function DashboardList({
   title,
   children,
-  viewAllLink,
+  onViewAll,
+  isViewingAll,
 }: DashboardListProps) {
   return (
     <Paper className={styles["dashboard-list"]}>
       <h4>{title}</h4>
       {children}
-      <Link href={viewAllLink as string}>
-        View All <ArrowRight />
-      </Link>
+      {!isViewingAll && (
+        <button onClick={onViewAll}>
+          View All <ArrowRight />
+        </button>
+      )}
     </Paper>
   );
 }

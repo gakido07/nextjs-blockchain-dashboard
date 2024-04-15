@@ -21,3 +21,21 @@ export type BlockData = {
   transactions: any[];
   uncles: any[];
 };
+
+export type TransactionData = {
+  hash: string;
+  type: bigint;
+  nonce: bigint;
+  blockHash: string;
+  blockNumber: bigint;
+  transactionIndex: bigint;
+  from: string;
+  to: string;
+  value: bigint;
+  gas: bigint;
+  gasPrice: bigint;
+  input: string;
+  v: bigint;
+  r: string;
+  s: string;
+};

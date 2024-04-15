@@ -1,5 +1,6 @@
 import Web3 from "web3";
 import _ from "lodash";
+import { BlockData } from "@/common/types";
 
 export const web3 = new Web3("https://eth.merkle.io");
 
@@ -66,9 +67,16 @@ priceFeed.methods
     // console.log("Latest Round Data", roundData);
   });
 
-export async function getLastNBlocks(n: number) {
-  const latest: any = Number(await web3.eth.getBlockNumber());
-  const blockNumbers = _.range(latest - n, latest + 1, 1);
+export interface GetBlocksParams {
+  page: number;
+  pageSize: number;
+}
+
+export async function getBlocks({ page, pageSize }: GetBlocksParams) {
+  const latest: number = Number(await web3.eth.getBlockNumber());
+  const start = latest - page * pageSize;
+  const end = start + pageSize;
+  const blockNumbers = _.range(start, end, 1);
   const blockPromises = blockNumbers.map(blockNumber =>
     web3.eth.getBlock(blockNumber)
   );

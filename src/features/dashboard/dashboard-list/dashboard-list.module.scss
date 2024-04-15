@@ -1,7 +1,7 @@
 @import '../../../styling/mixin.scss';
 
 .dashboard-list {
-  width: 48%;
+  width: 100%;
   min-height: 10vh;
   height: fit-content;
   padding: 1% 2% 1% 2%;
@@ -14,7 +14,7 @@
     margin-bottom: 1vh;
   }
 
-  a {
+  button {
     width: 100%;
     display: flex;
     justify-content: center;

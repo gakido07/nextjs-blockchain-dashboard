@@ -1,0 +1,22 @@
+.pagination-controls {
+  margin: auto;
+  margin-top: 5vh;
+  width: fit-content;
+
+  button {
+    margin-right: 1vw;
+    width: 5rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    margin-right: 1vw;
+
+  }
+
+  >button:nth-of-type(1) svg {
+    transform: rotate(-180deg);
+  }
+}
