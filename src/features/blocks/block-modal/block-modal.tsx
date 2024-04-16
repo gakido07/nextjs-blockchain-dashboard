@@ -33,8 +33,12 @@ export function BlockModal({ blockInFocus, onClose }: BlockModalProps) {
         <BlockDetail title="Transactions">
           {blockInFocus?.transactions.length}
         </BlockDetail>
-        <BlockDetail title="Gas Used">{blockInFocus?.gasUsed}</BlockDetail>
-        <BlockDetail title="Gas Limit">{blockInFocus?.gasLimit}</BlockDetail>
+        <BlockDetail title="Gas Used">
+          {blockInFocus?.gasUsed?.toString()}
+        </BlockDetail>
+        <BlockDetail title="Gas Limit">
+          {blockInFocus?.gasLimit?.toString()}
+        </BlockDetail>
       </div>
     </Modal>
   );
