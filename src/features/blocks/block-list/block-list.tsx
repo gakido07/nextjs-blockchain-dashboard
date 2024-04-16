@@ -9,12 +9,14 @@ import Link from "next/link";
 import { hideWalletAddress } from "@/common/util";
 import { useState } from "react";
 import { BlockModal } from "@/features/blocks/block-modal/block-modal";
+import { DateTime } from "luxon";
 
 interface BlockListProps {
   blocks?: BlockData[];
   loading?: boolean;
 }
 
+/** Block list component represents the container of a list of blocks. This is intended to easily create skeletons for loading scenarios and switch to actual data on data being available. The list contains a singular modal component allowing users click and focus on one block thereby opening the modal */
 export function BlockList({ blocks, loading }: BlockListProps) {
   const [blockInFocus, setBlockInFocus] = useState<BlockData>(null);
   getBlocks({
@@ -49,7 +51,7 @@ interface BlockProps {
   setBlockInFocus?: (block: BlockData) => void;
 }
 
-function Block({ block, setBlockInFocus }: BlockProps) {
+export function Block({ block, setBlockInFocus }: BlockProps) {
   return (
     <Flex onClick={() => setBlockInFocus(block)} className={styles.block}>
       <div className={styles["block-number"]}>
@@ -58,7 +60,11 @@ function Block({ block, setBlockInFocus }: BlockProps) {
         </ListIconWrapper>
         <div>
           <h6>{block?.number?.toString()}</h6>
-          <p>{block?.timestamp?.toString()}</p>
+          <p>
+            {DateTime.fromSeconds(Number(block?.timestamp))
+              .toUTC()
+              .toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS)}
+          </p>
         </div>
       </div>
       <div className={styles["block-miner"]}>

@@ -3,6 +3,7 @@ import styles from "./transaction-graph.module.scss";
 import Chart from "react-google-charts";
 import { DashboardCard } from "@/features/dashboard/dashboard-card/dashboard-card";
 import { getBlocks } from "@/lib/web3";
+import { DateTime } from "luxon";
 
 interface TransactionGraphProps {}
 
@@ -19,7 +20,9 @@ export function TransactionGraph({}: TransactionGraphProps) {
   const data = [
     ["date", "transactions"],
     ...blocks?.map(block => [
-      Number(block.timestamp.toString()),
+      DateTime.fromSeconds(Number(block.timestamp)).toLocaleString(
+        DateTime.DATE_SHORT
+      ),
       block.transactions.length,
     ]),
   ];
