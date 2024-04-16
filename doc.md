@@ -8,6 +8,8 @@ This project uses the following technologies:
 - sass for styling
 - jest for testing
 
+Folder structure is modeled after feature folders, with each feature having its own folder containing all the necessary files for that feature.
+
 ## INSTALLATION
 
 To install the project, run the following commands:
