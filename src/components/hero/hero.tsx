@@ -1,6 +1,4 @@
-import { TextInput } from "@mantine/core";
 import styles from "./hero.module.scss";
-import EthSvg from "@/assets/eth-alt-svgrepo-com.svg";
 import { BlockSearch } from "@/features/blocks/block-search/block-search";
 
 interface HeroProps {}

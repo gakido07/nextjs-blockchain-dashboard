@@ -1,11 +1,10 @@
-import { Flex, Skeleton } from "@mantine/core";
+import { Flex } from "@mantine/core";
 import styles from "./block-list.module.scss";
 import { BlockData } from "@/common/types";
 import BlockSvg from "@/assets/block-svgrepo-com.svg";
 import { DashboardListSkeleton } from "@/features/dashboard/dashboard-list/dashboard-list";
 import { getBlocks, web3 } from "@/lib/web3";
 import { ListIconWrapper } from "@/components/list-icon-wrapper/list-icon-wrapper";
-import Link from "next/link";
 import { hideWalletAddress } from "@/common/util";
 import { useState } from "react";
 import { BlockModal } from "@/features/blocks/block-modal/block-modal";

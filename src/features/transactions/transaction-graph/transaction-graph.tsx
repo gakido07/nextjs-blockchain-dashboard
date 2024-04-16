@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import styles from "./transaction-graph.module.scss";
 import Chart from "react-google-charts";
 import { DashboardCard } from "@/features/dashboard/dashboard-card/dashboard-card";
 import { getBlocks } from "@/lib/web3";
