@@ -3,6 +3,7 @@ import { Modal } from "@mantine/core";
 import styles from "./block-modal.module.scss";
 import { ReactNode } from "react";
 import { hideWalletAddress } from "@/common/util";
+import { DateTime } from "luxon";
 
 interface BlockModalProps {
   blockInFocus?: BlockData;
@@ -24,7 +25,11 @@ export function BlockModal({ blockInFocus, onClose }: BlockModalProps) {
         <BlockDetail title="Miner">
           {hideWalletAddress(blockInFocus?.miner)}
         </BlockDetail>
-        <BlockDetail title="Timestamp">{blockInFocus?.timestamp}</BlockDetail>
+        <BlockDetail title="Timestamp">
+          {DateTime.fromSeconds(Number(blockInFocus?.timestamp)).toLocaleString(
+            DateTime.DATETIME_MED_WITH_SECONDS
+          )}
+        </BlockDetail>
         <BlockDetail title="Transactions">
           {blockInFocus?.transactions.length}
         </BlockDetail>

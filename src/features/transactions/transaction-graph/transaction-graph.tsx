@@ -27,7 +27,15 @@ export function TransactionGraph({}: TransactionGraphProps) {
   ];
   return (
     <DashboardCard dataLoading={isLoading} field="Transaction History">
-      <Chart chartType="LineChart" width="100%" height="12vh" data={data} />
+      <Chart
+        chartType="LineChart"
+        width="100%"
+        height="12vh"
+        data={data}
+        options={{
+          legend: "bottom",
+        }}
+      />
     </DashboardCard>
   );
 }
